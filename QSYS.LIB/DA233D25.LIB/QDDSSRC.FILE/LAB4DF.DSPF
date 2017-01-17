@@ -1,0 +1,28 @@
+000001160919     A          R RECORD1                   CA03(03 'EXIT')
+000002161017     A                                      CF21(21)
+000003160919     A                                  2  3'LAWRENCE REYES'
+000004160919     A                                  2 38'LAB 4'
+000005160919     A                                  3 63TIME
+000006160919     A                                  2 65DATE
+000007160919     A                                 20  3'F3 - Exit'
+000008160919     A                                 20 16'F21 - Command Line'
+000009160919     A                                  5  3'Please select one of the following-
+000010160919     A                                       options:'
+000011160919     A                                  6 10'1.   Currency Symbol Used by this -
+000012160919     A                                      System'
+000013160919     A                                  7 10'2.   IPL type (Initial Program Loa-
+000014160919     A                                      d for System Reboot)'
+000015160919     A                                  8 10'3.   Signed on User''s Message Que-
+000016160919     A                                      ue'
+000017160919     A                                  9 10'4.   Initial number of active jobs-
+000018160919     A                                       for storage allocation'
+000019160919     A                                 10 10'5.   Display System Serial Number'
+000020160919     A                                 11 10'6.   Maximum Password Length'
+000021160919     A                                 12 10'7.   Previous sign on by signed on-
+000022160919     A                                       user'
+000023160919     A                                 14 18'Option:'
+000024160928     A            OPTION         2A  B 14 26
+000025160919     A  30                                  DSPATR(RI)
+000026160919     A  30                                  DSPATR(PC)
+000027160919     A            MSGTXT        70   O 16  9
+000028161017     A  30                             14 31'Valid option must be entered'

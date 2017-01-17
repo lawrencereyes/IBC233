@@ -1,0 +1,67 @@
+000100161017      PGM
+000101161017      DCLF       LAB4DF
+000102161017      DCL        &QCURSYMBOL *CHAR 1
+000103161017      DCL        &QIPLSTATUS *CHAR 1
+000104161017      DCL        &QACTIVEJOB *DEC 5 0
+000105161017      DCL        &QACTIVEJ   *CHAR 5
+000106161017      DCL        &QSRLNUMBER *CHAR 8
+000107161017      DCL        &QPASSLEN   *DEC 5 0
+000108161017      DCL        &QPL        *CHAR 5
+000109161017      DCL        &QUSER      *CHAR 20
+000110161017      DCL        &PRVSIGN    *CHAR 13
+000111161017      DCL        &QDATE      *CHAR 8
+000112161017      DCL        &QTIME      *CHAR 8
+000113161011
+000114161017      SndRcvf
+000115161011
+000116161017      RtvSysVal  SYSVAL(QCURSYM)    RTNVAR(&QCURSYMBOL)
+000117161017      RtvSysVal  SYSVAL(QIPLSTS)    RTNVAR(&QIPLSTATUS)
+000118161017      RtvSysVal  SYSVAL(QACTJOB)    RTNVAR(&QACTIVEJOB)
+000119161017      RtvSysVal  SYSVAL(QSRLNBR)    RTNVAR(&QSRLNUMBER)
+000120161017      RtvSysVal  SYSVAL(QPWDMAXLEN) RTNVAR(&QPASSLEN)
+000121161017      RtvSysVal  SYSVAL(QDATETIME)  RTNVAR(&QUSER)
+000122161017      RtvUsrPrf  PRVSIGN(&PRVSIGN)
+000124161011
+000125161017      ChgVar     &QACTIVEJ &QACTIVEJOB
+000126161017      ChgVar     &QPL &QPASSLEN
+000127161011
+000128161017      DoWhile    (&IN03 = '0')
+000129161017             IF (&IN21 *EQ '1') CALL QUSCMDLN
+000130161017             ELSE CHGVAR &IN30 '0'
+000131161017         Select
+000132161017            When       (&OPTION = '1' *or &OPTION = '01') ChgVar +
+000133161017                         &MsgTxt ('The currency symbol is set to ' +
+000134161017                         *BCAT &QCURSYMBOL)
+000135161017            When       (&OPTION = '2' *or &OPTION = '02') ChgVar +
+000136161017                         &MsgTxt ('IPL status indicator is ' *BCAT +
+000137161017                         &QIPLSTATUS)
+000138161017            When       (&OPTION = '3' *or &OPTION = '03') ChgVar +
+000139161017                         &MsgTxt ('Signed on Users message queue is +
+000140161017                         QUSRSYS/DA233D25')
+000141161017            When       (&OPTION = '4' *or &OPTION = '04') ChgVar +
+000142161017                         &MsgTxt ('Initial number of active jobs +
+000143161017                         for which storage is allocated is: ' *BCAT +
+000144161017                         &QACTIVEJ)
+000145161017            When       (&OPTION = '5' *or &OPTION = '05') ChgVar +
+000146161017                         &MsgTxt ('The system serial number is ' +
+000147161017                         *BCAT &QSRLNUMBER)
+000148161017            When       (&OPTION = '6' *or &OPTION = '06') ChgVar +
+000149161017                         &MsgTxt ('Maximum Password length is ' +
+000150161017                         *BCAT &QPL)
+000151161017            When       (&OPTION = '7' *or &OPTION = '07') DO
+000152161017               ChgVar   &QDATE   (%SST(&PRVSIGN 2 2) *CAT '/'          +
+000153161017                                 *CAT %SST(&PRVSIGN 4 2) *CAT '/'      +
+000154161017                                 *CAT %SST(&PRVSIGN 6 2))
+000155161017              ChgVar    &QTIME   (%SST(&PRVSIGN 8 2) *CAT ':' *CAT     +
+000156161017                                  %SST(&PRVSIGN 10 2) *CAT ':' *CAT    +
+000157161017                                  %SST(&PRVSIGN 12 2))
+000158161017              ChgVar    &MsgTxt  ('Signed on Users previous signon was +
+000159161017                                  on ' *CAT &QDATE *BCAT &QTIME)
+000160161017            ENDDO
+000161161017            Otherwise  ChgVar &in30 '1'
+000162161017         EndSelect
+000163161011
+000164161017         SndRcvf
+000165161017      Enddo
+000166161011
+000167161017      ENDPGM

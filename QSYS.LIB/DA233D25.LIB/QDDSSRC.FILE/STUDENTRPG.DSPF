@@ -1,0 +1,32 @@
+000001161112     A          R RECORD1
+000002161112     A                                  2  2'DA233D25'
+000003161112     A                                  2 29'Student Information'
+000004161112     A                                  2 67DATE
+000005161112     A                                  4  2'Student Number:'
+000006161112     A                                  6  2'Name:'
+000007161112     A                                  8  2'Birth Date:'
+000008161112     A                                 10  2'Address:'
+000009161112     A                                 16  2'Fees Owed:'
+000010161112     A                                 14  2'Fines Owed:'
+000011161112     A                                 18 34'F3 - Exit'
+000012161112     A            STUDENTNO R        B  4 21REFFLD(STUDENTSR/STUDENTNO +
+000013161112     A                                      DA233D25/STUDENTS)
+000014161112     A            FIRSTNAME R        O  6 21REFFLD(STUDENTSR/FIRSTNAME +
+000015161112     A                                      DA233D25/STUDENTS)
+000016161112     A            LASTNAME  R        O  6 37REFFLD(STUDENTSR/LASTNAME +
+000017161112     A                                      DA233D25/STUDENTS)
+000018161112     A            BIRTHDATE R        B  8 21REFFLD(STUDENTSR/BIRTHDATE +
+000019161112     A                                      DA233D25/STUDENTS)
+000020161112     A            ADDRESS   R        O 10 21REFFLD(STUDENTSR/ADDRESS +
+000021161112     A                                      DA233D25/STUDENTS)
+000022161112     A            CITY      R        O 11 21REFFLD(STUDENTSR/CITY DA233D25/STUD-
+000023161112     A                                      ENTS)
+000024161112     A            PROVINCE  R        O 11 37REFFLD(STUDENTSR/PROVINCE +
+000025161112     A                                      DA233D25/STUDENTS)
+000026161112     A            POSTALCODER        O 11 41REFFLD(STUDENTSR/POSTALCODE +
+000027161112     A                                      DA233D25/STUDENTS)
+000028161112     A            FINEOWED  R        O 14 21REFFLD(STUDENTSR/FINEOWED +
+000029161112     A                                      DA233D25/STUDENTS)
+000030161112     A            FEESOWED  R        O 16 21REFFLD(STUDENTSR/FEESOWED +
+000031161112     A                                      DA233D25/STUDENTS)
+000100      

@@ -1,0 +1,32 @@
+000001160914     A          R RECORD1
+000002160914     A                                  2 29'Marks Calculator'
+000003160914     A                                  2  4USER
+000004160914     A                                  3  4SYSNAME
+000005160914     A                                  2 65DATE
+000006160914     A                                  3 65TIME
+000009160914     A                                  5 30'Test1:'
+000010160914     A                                  6 30'Test2:'
+000011160914     A                                  7 30'Test3:'
+000012160914     A                                  8 30'Labs:'
+000013160914     A                                  9 30'Exam:'
+000015160914     A            TEST1          3  0B  5 37RANGE(0 100)
+000016160914     A            TEST3          3  0B  7 37RANGE(0 100)
+000017160914     A            TEST2          3  0B  6 37RANGE(0 100)
+000018160914     A            LABS           2  0B  8 37RANGE(0 30)
+000019160914     A            EXAM           3  0B  9 37RANGE(0 100)
+000021160914     A          R RECORD2                   CA03(03 'EXIT')
+000022160919
+000023160914     A                                      OVERLAY
+000024160919     A                                 10 30'Tests:'
+000025160919     A                                 11 30'Final Grade:'
+000026160919     A                                 12 30'Final Mark:'
+000027160919     A            TESTOVRALL     3  0O 10 43
+000028160919     A            LETGRADE       2   O 12 43
+000029160919     A            NUMGRADE       3  0O 11 43
+000030160914     A                                 14  8'F3 - Exit'
+000100      
+000101160914     A*%%RS+<record-sequences>
+000102160914     A*%%RS+ <sequence name="Untitled">
+000103160914     A*%%RS+  <device type="display" width="80" height="24" />
+000104160914     A*%%RS+ </sequence>
+000105160914     A*%%RS </record-sequences>

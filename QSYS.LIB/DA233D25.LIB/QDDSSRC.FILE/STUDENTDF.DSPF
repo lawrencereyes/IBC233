@@ -1,0 +1,45 @@
+000001161112     A          R RECORD1                   CA03(03 'EXIT')
+000002161112     A                                  2  2'DA233D25'
+000003161112     A                                  2 29'Student Information'
+000004161112     A                                  2 67DATE
+000005161112     A                                  4  2'Student Number:'
+000006161112     A                                  6  2'Name:'
+000007161112     A                                  8  2'Birth Date:'
+000008161112     A                                 10  2'Address:'
+000009161112     A                                 16  2'Fees Owed:'
+000010161112     A                                 14  2'Fines Owed:'
+000011161112     A                                 18 34'F3 - Exit'
+000012161112     A            FULLNAME      32   O  6 21
+000013161114     A            STUDENTNO      9S 0O  4 21
+000018161112     A            BIRTHDATE R        O  8 21REFFLD(STUDENTSR/BIRTHDATE +
+000019161112     A                                      DA233D25/STUDENTS)
+000020161112     A            ADDRESS   R        O 10 21REFFLD(STUDENTSR/ADDRESS +
+000021161112     A                                      DA233D25/STUDENTS)
+000022161112     A            CITY      R        O 11 21REFFLD(STUDENTSR/CITY DA233D25/STUD-
+000023161112     A                                      ENTS)
+000024161112     A            PROVINCE  R        O 11 40REFFLD(STUDENTSR/PROVINCE +
+000025161112     A                                      DA233D25/STUDENTS)
+000026161112     A            POSTALCODER        O 12 21REFFLD(STUDENTSR/POSTALCODE +
+000027161112     A                                      DA233D25/STUDENTS)
+000028161112     A            FINEOWED  R        O 14 21REFFLD(STUDENTSR/FINEOWED +
+000029161112     A                                      DA233D25/STUDENTS)
+000030161114     A                                      EDTCDE(1)
+000031161112     A            FEESOWED  R        O 16 21REFFLD(STUDENTSR/FEESOWED +
+000032161114     A                                      DA233D25/STUDENTS)
+000033161114     A                                      EDTCDE(1)
+000034161112     A                                  4 52'Phone:'
+000035161114     A            PHONE         10Y 0O  4 60EDTWRD('0(   )&   -    ')
+000036161112     A          R RECORD2                   OVERLAY
+000037161112     A                                  2  3'Lawrence Reyes'
+000038161112     A                                  2 32'Student Summary'
+000039161112     A                                  2 66USER
+000040161112     A                                  4 66TIME
+000041161112     A                                  3 66DATE
+000042161112     A                                  4 16'Total Students:'
+000043161112     A                                  6 20'Fines Owed:'
+000044161112     A                                  7 21'Fees Owed:'
+000045161112     A                                  9 19'Total Owing:'
+000046161114     A            TSTUDENT       3Y 0O  4 34EDTCDE(1)
+000047161114     A            TFEEOWED       7Y 2O  7 34EDTCDE(1)
+000048161114     A            TOTALOWED      9  2O  9 32EDTCDE(1 $)
+000049161114     A            TFINEOWED      7Y 2O  6 34EDTCDE(1)
